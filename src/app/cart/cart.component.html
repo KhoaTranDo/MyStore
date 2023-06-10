@@ -1,0 +1,21 @@
+<div class="cart-container">
+  <div class="cart-list" *ngIf="cart.length>0">
+    <h2 class="cart-panel">Cart</h2>
+    <div *ngFor="let product of cart" class="cart-item">
+      <img src={{product?.url}}>
+      <div class="cart-item-details">
+        <p><b>{{product?.name}}</b></p>
+        <p>${{product?.price}}</p>
+        <input class="number-input" type="number" id="quantity" name="quantity" (change)="updateTotalPrice()"
+          [(ngModel)]=product.quantity min="1">
+        <button (click)="removeProduct(product.id)">❌</button>
+      </div>
+    </div>
+    <h2>Total {{totalPrice}}</h2>
+  </div>
+  <div *ngIf="cart.length==0" class="cart-list empty-cart-message">
+    <h2 class="cart-panel">Cart</h2>
+    <p>Empty cart</p>
+  </div>
+  <app-checkout-form class="checkout_container"></app-checkout-form>
+</div>

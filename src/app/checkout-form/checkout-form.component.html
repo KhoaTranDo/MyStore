@@ -1,0 +1,37 @@
+<form #form="ngForm" (ngSubmit)="onSubmit()" class="checkout_container">
+  <label>Full name</label>
+  <input name="fullName" [(ngModel)]="fullName" minlength="3" type="text" placeholder="(minimum 3 characters)"
+    #checkoutName="ngModel" required>
+  <div *ngIf="checkoutName.invalid && checkoutName.dirty">
+    <div class="error-message" *ngIf="checkoutName.errors?.['required']">
+      Name is required
+    </div>
+    <div class="error-message" *ngIf="checkoutName.errors?.['minlength']">
+      Fullname must contain at least 3 characters.
+    </div>
+  </div>
+  <label>Address</label>
+  <input name="address" [(ngModel)]="address" minlength="6" type="text" placeholder="(minimum 6 characters)"
+    #checkoutAddress="ngModel" required>
+  <div *ngIf="checkoutAddress.invalid && checkoutAddress.dirty">
+    <div class="error-message" *ngIf="checkoutAddress.errors?.['required']">
+      Address is required
+    </div>
+    <div class="error-message" *ngIf="checkoutAddress.errors?.['minlength']">
+      Address must contain at least 6 characters.
+    </div>
+  </div>
+  <label>Credit card number</label>
+  <input name="credit" [(ngModel)]="credit" type="number" pattern="[0-9]{16}" placeholder="(16-digit number)"
+    #checkoutCredit="ngModel" required>
+  <div *ngIf="checkoutCredit.invalid && checkoutCredit.dirty">
+    <div class="error-message" *ngIf="credit!=null && credit.toString().length !=16">
+      Credit contain 16 characters.
+    </div>
+    <div class="error-message" *ngIf="checkoutCredit.errors?.['required']">
+      Credit number is required
+    </div>
+  </div>
+  <p>We'll never share your payment details with anyone else</p>
+  <button type="submit" [disabled]="form.invalid">Submit</button>
+</form>

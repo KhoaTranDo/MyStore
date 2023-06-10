@@ -1,0 +1,5 @@
+<div class="product_list_container">
+  <div class="product_list" *ngFor="let product of productList">
+    <app-product-item [product]="product" (addCart)="addCart(product)"></app-product-item>
+  </div>
+</div>

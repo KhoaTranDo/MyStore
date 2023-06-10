@@ -1,0 +1,33 @@
+.product-image {
+  list-style-type: none;
+  width: 290px;
+  padding: 20px;
+  margin: 6px 6px;
+  border: 1px solid #33B5E5;
+}
+
+.product-container {
+  display: block;
+}
+
+.select-input {
+  width: 50%;
+  height: 30px;
+  margin-bottom: 8px;
+  margin-right: 10px;
+}
+
+.product-container button {
+  height: 30px;
+  width: 40%;
+  font-size: 20px;
+  color: white;
+  background-color: lightblue;
+  border-radius: 5px;
+  border: none;
+}
+
+.product-container p {
+  text-align: center;
+  font-size: 20px;
+}
