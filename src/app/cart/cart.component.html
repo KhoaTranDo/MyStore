@@ -6,10 +6,10 @@
       <div class="cart-item-details">
         <p><b>{{product?.name}}</b></p>
         <p>${{product?.price}}</p>
-        <input class="number-input" type="number" id="quantity" name="quantity" (change)="updateTotalPrice()"
+        <input class="number-input" type="number" id="quantity" name="quantity" (ngModelChange)="updateTotalPrice()"
           [(ngModel)]=product.quantity min="1">
         <button (click)="removeProduct(product.id)">❌</button>
-      </div>
+      </div>  
     </div>
     <h2>Total {{totalPrice}}</h2>
   </div>

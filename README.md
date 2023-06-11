@@ -1,5 +1,12 @@
 # MyStore
 
+MyStore is a simple e-shop built by Angular. This page allows users to view list products, add products to cart and checkout. all functions are described below:
+- List products
+- Add products to cart
+- Checkout products
+- View product detail
+- Delete product from cart
+- Count cart total price    
 
 ## Install package
 - run 'npm install'
